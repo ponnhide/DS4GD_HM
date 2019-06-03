@@ -55,7 +55,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 ### Hello World 
 
 テキストエディタを立ち上げて（間違えてもWordとか立ち上げないでね。Wordにプログラム書き始めるのだけはマジでやめてね。）以下のプログラムを書き込こもう。
-````Python
+````python:hello.py
 print("Hello world")
 ````
 そしたら"hello.py"で保存。そのまま、Terminal上で以下のコマンドを実行。(ちゃんとhello.pyを作成したディレクトリまで移動してね。)
