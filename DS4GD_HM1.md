@@ -320,6 +320,44 @@ if __name__ == "__main__":
 
 
 
+## おまけ
+###関数
+プログラミングをやる上で絶対に知っておいた方がいいものの1つが関数である。関数とは特定の処理に名前をつけてまとめたものである。例えば、numpyを使わずに2つのList各々の分散を求めるためのプログラムを考えてみよう。
+````Python 
+import numpy as np
+hoge = [1,2,3,4,5]
+fuga = [6,7,8,9,10] 
+
+hoge_mean = sum(hoge)/len(hoge) 
+hoge_var = 0
+for value in hoge:
+	hoge_var += (value - hoge_mean) ** 2
+hoge_var = hoge_var / len(hoge)
+
+fuga_mean = sum(fuga)/len(fuga) 
+fuga_var = 0
+for value in hoge:
+	fuga_var += (value - fuga_mean) ** 2
+fuga_var = fuga_var / len(fuga)
+
+print(hoge_var,fuga_var) 
+````
+プログラムをみたら気づいたと思うけど、fuga_mean からはhogeに対して処理をfugaに対しても繰り返しているだけである。これは、無駄そうだし変数名も増えていってプログラムが汚くなってしまう。ということで、こういう時は関数を使えばよい。
+````Python 
+import numpy as np
+def var(values):
+	mean = sum(values)/len(values)
+	var  = 0
+	for value in values:
+		var = += (value - mean) ** 2
+	var = var / len(values) 
+	return var
+hoge = [1,2,3,4,5]
+fuga = [6,7,8,9,10] 
+print(var(hoge)) 
+print(var(fuga)) 
+````
+さて、関数の役割はわかったかな？
 
 
 
