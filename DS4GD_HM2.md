@@ -174,16 +174,16 @@ if __name__ == "__main__":
         print(SeqUtils.GC_skew(fna.seq)[0])
 ````
 一応、1つ1つ解説していく。
-**from Bio import SeqIO** 
+**from Bio import SeqIO**   
 Bio(python)から、様々な形式で書かれるゲノム情報を読み込むためのモジュールSeqIO (Iはinput, Oはoutputの意味）を読み込んでいる。```import Bio.SeqIO``` といった書き方も可能。
 
-**from Bio import SeqIO** 
+**from Bio import SeqIO**   
 Bio(python)から、生体分子配列 (DNA/RNA配列）に対して様々な生命科学計算を行ってくれるモジュールSeqUtilsを読み込んいる。```import Bio.SeqUtils``` といった書き方も可能。
 
-**SeqIO.parse("../sample_genome/sample1.fasta","fasta")**
+**SeqIO.parse("../sample_genome/sample1.fasta","fasta")**  
 ```SeqIO.parse```を使うとファイル内の配列情報を1配列ごとに取り出すことができる。最初の引数にfileの名前、次にフォーマット(Fasta, genbank, gff等等）を指定する。念の為に説明すると"../"は１つ上のディレクトリを示す相対PATHだぞ。同じようなことをしてくれる関数にSeqIO.readという関数がある。しかし、こちらはファイル内の配列数が1つのときしか使えないので、あまり使い道がない。基本的に、FastaもGenbankも複数の配列の情報が入っていることが多い。ヒトであれば、各染色体の配列情報だったり、バクテリアであればまだゲノムとプラスミド、コンプリートゲノムが分かっていない生物なら各contigの配列等々。
 
-**fna.id**
+**fna.id**  
 Fasta fileのフォーマットは以下のようになっている。ここでいう```HOGE```や```FUGA```にあたる部分が、idである。
 ````
 >HOGE
@@ -194,16 +194,16 @@ GTGTTGCCAACTCGAAGGCTCTGCTCACCAATGTACATGGCCTTAATCTGGAAAACTGGCAGGAAGAACTGGCGCAAGCC
 AAAGAGCCGTTTAATCTCGGGCGCTTAATTCGCCTCGTGAAAGAATATCATCTGCTGAACCCGGTCATTGTTGACTGCAC
 ````
 
-**fna.seq.reverse_complement()**
+**fna.seq.reverse_complement()**  
 逆相補鎖の配列を作成してくれる。
 
-**SeqUtils.GC(sequence)**
+**SeqUtils.GC(sequence)**  
 一本鎖DNA配列中のGC含量を計算してくれる。
 
-**SeqUtils.GC_skew(sequence, windowsize=100)**
+**SeqUtils.GC_skew(sequence, windowsize=100)**  
 一本鎖DNA配列中のGC skewを計算してくれる。**GC skewは一本鎖DNA配列におけるG含量とC含量のバイアスを表す指標**。(G-C)/(G+C)の式で表される。この値が正であれば、その配列中でGにバイアスがかかっていることになるし、負であればCのバイアスが大きいことになる。お節介なことに、この関数は2つ目の引数(windowsizeの部分）に数字を入れると、そのサイズのwindowでGC_skewの移動平均を取ってくれる（何も入れなかった場合には勝手にwindowsize=100の移動平均になる）。なぜこの機能が```SeqUtils.GC```にはないのか。謎である。
 
-####without Biopython
+#### without Biopython
 ぶっちゃけ上記のプログラムぐらいなら、Biopythonを使わなくたってできる。シンプルなプログラムならBiopyhtonを使わない方が処理も早いので、自分で書けるようになることをお勧めする。
 
 ````python
@@ -237,21 +237,21 @@ if __name__ == "__main__":
         print(calc_GC_skew(seq))
 ````
 一部だけ、解説
-**read_fasta(filename)**
+**read_fasta(filename)**  
 Fastaを読み込んで、SeqIDをkey, 配列をvalueに持つ辞書を返してくれる関数を作っている。
->**with open(fname,"r") as f**
+>**with open(fname,"r") as f**  
 >ここではfileを読み込んでいる。fnameにはファイル名、fには任意の変数名が入る。この場合「ファイル(fname)をfとして読み込みますよー」といったところである。"r"の部分には基本的は"r"か"w"が入る。"r"は読み込みモード、"w"が書き込みモードである。間違ってもすでに存在するファイルを"w"で開いてはいけない。中身が消されて初期化されてまうからな。既にあるファイルに新たな書き込みを加えたい場合には"a"を使おう。
->**for line in f:**
+>**for line in f:**  
 >こうすることで、ファイルを1ループに1行づつ読み込むことができる。基本的に途中から読み込んだりとかはできない。
->**if line[0] == ">"以下の解説**
+>**if line[0] == ">"以下の解説**  
 >各行の一文字目が">"だったら、```rstrip()```を使って改行文字を取り除いた後、```[1:]```で">"以降の文字列を```seq_id```に代入し、```seq_dict```に新たなkeyとして加えている。先頭が”>"以外の行は配列情報なので、rstrip()で改行文字を取り除いた文字列を```seq_dict[seq_id]```に随時連結している。
 
-**seq.translate(str.maketrans("ATGC","TACG"))[::-1]**
+**seq.translate(str.maketrans("ATGC","TACG"))[::-1]**  
 これは公式として覚えて欲しい。こうすれば、逆相補鎖になるのだ。なるものはなる。単に相補鎖が欲しい場合は、```seq.translate(str.maketrans("ATGC","TACG"))```でおk。
 
 
 
-###GC含量の移動プロット
+### GC含量の移動プロット
 GC含量の移動プロットを書いてみよう。残念ながら、Biopythonには1行で移動プロットをしてくれるような関数はない。なので、自分で作るしかない。まぁそんな難しいコードでもないので、書いてみよう。
 
 まず移動プロットを書くためには、ゲノムをウインドウサイズごとに分ける必要がある。ようは文字列をn文字ごと区切れれば良いのだが、どのように行うかというと、
@@ -284,7 +284,7 @@ if __name__ == "__main__":
 
 
 
-#####図のプロット
+#### 図のプロット
 ここからは個人的な流儀なのだが、どんな結果も基本的に一度テキストファイルに書き出した方が良い。プログラミングに慣れてくるとデータを書き出さず、1つのスクリプトの中でデータの処理から結果の図示まで完結させがちになる（僕自身、面倒なときはこうしてしまう時がある。）ただ、これはあまり良くない。理由は簡単で、他の人が結果を確認できないからだ。世の中の人誰もがプログラムを走らせられる訳ではない。エクセルしか使えない人だってたくさんいるっていうかそっちの方が多い。で、研究をつづけていけばそういう人たちとデータを共有する機会が増えてくる。そういう時は、図だけ送っても相手には生の数値がわからない。一方、エクセルで再現できるように整形した生データがあれば、相手は数値を確認できるし、自分の手で同じ図を再現することだってできる。なので図を作る際は、元となる数値データをテキストに書き出すためのスクリプトと、そのテキストを読み込んで図をプロットするスクリプトは別々に作成するようにしよう。
 
 ということで、先の結果をテキストに書き出してみよう。
@@ -308,10 +308,10 @@ if __name__ == "__main__":
 ````
 もう私には無理ぽ。今日は帰って寝よ。って感じの子が出てきそうなので、ちょっと解説。
 
-**with open("{}_GCratio.txt".format(fna.id),"w") as o**
+**with open("{}_GCratio.txt".format(fna.id),"w") as o**  
 ```sample1_wo_bio.py```のときとは違って、ここではファイルを書き込みモードで開いている。```"{}_GCratio.txt".format(fna.id)```で使われている```format```は{}の中に変数を埋め込むために使われれる。詳しい使い方は"Python format"でググってみよう。
 
-**o.write(fna.id + "," + str(size) + "\n"), o.write(str(i*size+1) + "," + str(results[i]) + "\n")**
+**o.write(fna.id + "," + str(size) + "\n"), o.write(str(i*size+1) + "," + str(results[i]) + "\n")**  
 o.writeでファイルに文字を書き込むことができる。この時に気をつけたいのが、改行したい場合には最後に"\n"をつけること。これは改行コードと呼ばれる文字で、これをつけないと改行が行われないので注意。
 
 さて上記のプログラムを動かすと、
@@ -351,30 +351,30 @@ if __name__ == "__main__":
 ````
 少し解説。
 
-**with open(sys.argv[1],"r") as f**
+**with open(sys.argv[1],"r") as f**  
 ここで使った```sys.argv[1]```というのは、コマンドライン引数とか呼ばれるやつである。例えば、
 ````
 python plot.py sample_GCratio.txt
 ````
 としてやると、```sys.argv[1]```には```sample2_GCratio.txt```が入る。こんな風に```sys.argv```を使えば、スクリプトを書き変えずともコマンドラインから任意の文字列や数値をスクリプトに渡すことができる。ついでにいうと```sys.argv[0]```にはスクリプトファイル名、つまり```plot.py```が入る。
 
-**row = line.rstrip.split(",")**
+**row = line.rstrip.split(",")**  
 ファイルの中身はカンマ区切りになっていて、1列目がポジション。2列目がGC含量になっている。なので、まず```split(",")```をつかって各行をカンマで分割し、2つの要素からなるListに変換している。
 
-**fig = plt.figure(figsize=(4,2))**
+**fig = plt.figure(figsize=(4,2))**  
 figureを作成するための土台を作っている。
 
-**ax  = fig.add_axes([0.1,0.1,0.8,0.8])**
+**ax  = fig.add_axes([0.1,0.1,0.8,0.8])**  
 実際に、結果を図示する枠をfig上に生成している。figの縦、横を1.0として捉えたときにどのような枠を設定するかというのが[0.1,0.1,0.8,0.8]の部分。最初の0.1,0.1は起点となるx,yの座標。0.8,0.8は枠の横、縦の長さを示す。
 
-**ax.plot(positions,values)**
+**ax.plot(positions,values)**  
 折れ線グラフを表示してくれる。細かい設定は自分でググって勉強しよう。
 
-**fig.savefig(sys.argv[1].replace(".txt",".pdf"),bbox_inches="tight")**
+**fig.savefig(sys.argv[1].replace(".txt",".pdf"),bbox_inches="tight")**  
 作成したfigureをpdfに保存している。```bbox_inches="tight"```はおまじない。つけといて損することはあまりないので、つけることをお勧めする。
 
-###課題1
+### 課題1
 自分が扱う生物種を対象に、GC_slide2.pyとplot.pyを使ってGC含量の移動プロットをしてみよう。
 
-###課題2
+### 課題2
 sample2.fastaを対象にGC skewの移動平均をとるスクリプト"?"を実行して、作成されたテキストファイルをplot.pyで描画してみよう。実はsample2.fastaはEscherichia coli str. K-12 substr. MG1655（最も一般的な大腸菌）のゲノムなのだが、図から何か特徴に気づいたかな？
