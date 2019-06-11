@@ -373,8 +373,6 @@ figureを作成するための土台を作っている。
 **fig.savefig(sys.argv[1].replace(".txt",".pdf"),bbox_inches="tight")**
 作成したfigureをpdfに保存している。```bbox_inches="tight"```はおまじない。つけといて損することはあまりないので、つけることをお勧めする。
 
-
-
 ###課題1
 自分が扱う生物種を対象に、GC_slide2.pyとplot.pyを使ってGC含量の移動プロットをしてみよう。
 
