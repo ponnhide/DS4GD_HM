@@ -1,0 +1,85 @@
+tagA,NP_052607.1,92526,2502,1,ToxR-regulated lipoprotein
+etpC,NP_052608.1,2588,3464,1,EtpC
+etpD,NP_052609.1,3674,5432,1,EtpD
+etpE,NP_052610.1,5431,6937,1,EtpE
+etpF,NP_052611.1,6938,8162,1,EtpF
+etpG,NP_052612.1,8192,8627,1,EtpG
+etpH,NP_052613.1,8623,9178,1,EtpH
+etpI,NP_052614.1,9192,9540,1,EtpI
+etpJ,NP_052615.1,9536,10136,1,EptJ
+etpK,NP_052616.1,10132,11110,1,EtpK
+etpL,NP_052617.1,11472,12321,1,EtpL
+etpM,NP_052618.1,12307,12820,1,EtpM
+etpN,NP_052619.1,12994,13711,1,EptN
+etpO,NP_052620.1,13802,14204,1,EptO
+N.A.,NP_052621.1,14346,14688,1,hypothetical protein
+N.A.,NP_052622.1,14732,15554,1,hypothetical protein
+hlyC,NP_052623.1,16118,16610,1,hemolysin C
+hlyA,NP_052624.1,16611,19608,1,hemolysin A
+hlyB,NP_052625.1,19657,21778,1,hemolysin B
+hlyD,NP_052626.1,21781,23221,1,hemolysin D
+N.A.,NP_958720.1,23287,23482,1,hypothetical protein
+papX,NP_052627.1,23511,23796,1,PapX
+N.A.,NP_958721.1,23964,24195,1,hypothetical protein
+N.A.,NP_052628.1,24315,25056,1,recombinase
+N.A.,NP_052629.1,24744,25062,-1,hypothetical protein
+repFIB,NP_052630.2,25340,26318,-1,RepFIB
+N.A.,NP_052631.1,26055,26385,1,hypothetical protein
+N.A.,NP_958722.1,26725,26926,-1,hypothetical protein
+N.A.,NP_052632.1,26922,27543,-1,hypothetical protein
+N.A.,NP_052633.1,27539,28223,-1,KfrAs
+letA,NP_052634.1,28681,28900,1,plasmid maintenance protein CcdA
+letB,NP_052635.1,28901,29207,1,plasmid maintenance protein CcdB
+N.A.,NP_052636.1,29207,30014,1,resolvase
+N.A.,NP_052637.1,30735,31626,-1,transposase
+N.A.,NP_052638.1,31622,31949,-1,hypothetical protein
+sopA,NP_052640.1,32836,34003,1,plasmid-partitioning protein SopA
+sopB,NP_052641.1,34002,34974,1,plasmid-partitioning protein
+N.A.,NP_052642.1,36273,37998,1,reverse transcriptase
+N.A.,NP_052643.1,38074,38977,1,hypothetical protein
+N.A.,NP_052644.1,38980,39286,1,hypothetical protein
+N.A.,NP_052645.1,39362,40046,1,putative methylase
+N.A.,NP_958723.1,40046,40268,1,hypothetical protein
+N.A.,NP_052646.1,40161,40716,1,hypothetical protein
+N.A.,NP_052647.1,40761,41538,1,hypothetical protein
+N.A.,NP_052648.1,41410,41983,1,hypothetical protein
+klcA,NP_052649.1,42078,42381,1,hypothetical protein
+N.A.,NP_052650.1,42427,42850,1,hypothetical protein
+N.A.,NP_052651.1,43156,43546,1,hypothetical protein
+N.A.,NP_052652.1,44033,44264,1,hypothetical protein
+N.A.,NP_052653.1,44315,45677,1,hypothetical protein
+N.A.,NP_052654.1,45723,46287,1,hypothetical protein
+N.A.,NP_052655.1,46372,46828,-1,hypothetical protein
+ssb,NP_052656.1,47129,47582,1,single-stranded DNA-binding protein
+N.A.,NP_958724.1,47638,47872,1,hypothetical protein
+N.A.,NP_052657.1,47937,49896,1,hypothetical protein
+psiB,NP_052658.1,49950,50385,1,plasmid SOS inhibition protein B
+psiA,NP_052659.1,50381,51143,1,plasmid SOS inhibition protein A
+parB,NP_052660.1,51374,51533,1,small toxic polypeptide
+nikB,NP_052661.1,51714,53688,1,NikB
+N.A.,NP_052662.1,53755,54187,1,hypothetical protein
+N.A.,NP_052663.1,54760,55120,-1,transposase Tra5
+N.A.,NP_052664.1,55301,55712,1,transposase
+toxB,NP_052665.1,55980,65490,1,toxin B
+N.A.,NP_052666.1,65581,65854,1,transposase Tra5
+IS629,NP_052667.1,65780,66284,-1,hypothetical protein
+traX,NP_052669.1,67748,68495,1,conjugal transfer pilus acetylation protein TraX
+N.A.,NP_052670.1,68553,69414,1,hypothetical protein
+finO,NP_052671.1,69516,70077,1,conjugal transfer fertility inhibition protein FinO
+N.A.,NP_958725.1,70209,70422,1,hypothetical protein
+N.A.,NP_052672.1,70666,71128,1,hypothetical protein
+N.A.,NP_958726.1,71173,71383,1,hypothetical protein
+N.A.,NP_052673.1,71420,71759,1,hypothetical protein
+repA2,NP_052674.1,71998,72253,1,replication protein
+repA1,NP_052675.1,72555,73413,1,replication protein
+N.A.,NP_052676.1,74324,74609,1,hypothetical protein
+N.A.,NP_052677.1,74608,74884,1,hypothetical protein
+N.A.,NP_052678.1,74978,75185,1,hypothetical protein
+N.A.,NP_052681.1,76061,76526,-1,transposase
+N.A.,NP_052684.1,79688,80576,1,transposase
+espP,NP_052685.1,80756,84659,1,EspP
+N.A.,NP_958727.1,85123,85396,-1,hypothetical protein
+N.A.,NP_052686.1,87221,87659,1,hypothetical protein
+N.A.,NP_052687.1,87658,88765,1,RfbU-like protein
+N.A.,NP_052688.1,88854,90576,1,hypothetical protein
+N.A.,NP_052689.1,90649,91648,1,lipid A biosynthesis (KDO)2-(lauroyl)-lipid IVA acyltransferase
