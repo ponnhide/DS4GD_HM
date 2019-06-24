@@ -377,4 +377,4 @@ figureを作成するための土台を作っている。
 自分が扱う生物種を対象に、GC_slide2.pyとplot.pyを使ってGC含量の移動プロットをしてみよう。
 
 ### 課題2
-sample2.fastaを対象にGC skewの移動平均をとるスクリプト"?"を実行して、作成されたテキストファイルをplot.pyで描画してみよう。実はsample2.fastaはEscherichia coli str. K-12 substr. MG1655（最も一般的な大腸菌）のゲノムなのだが、図から何か特徴に気づいたかな？
+sample2.fastaを対象にGC skewの移動平均をとるスクリプト"GCskew_slide.py"を実行して、作成されたテキストファイルをplot.pyで描画してみよう。実はsample2.fastaはEscherichia coli str. K-12 substr. MG1655（最も一般的な大腸菌）のゲノムなのだが、図から何か特徴に気づいたかな？
